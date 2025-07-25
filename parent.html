@@ -15,7 +15,8 @@
     // Listen for message from child
     window.addEventListener("message", function(event) {
       if (event.data && event.data.action === "buttonClicked") {
-        alert("Button was clicked in child (hidden iframe)!");
+        document.querySelector('.lpc_slider-header__minimize-button-asset').click();
+        //alert("Button was clicked in child (hidden iframe)!");
       }
     });
   </script>
