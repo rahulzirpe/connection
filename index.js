@@ -27,7 +27,11 @@ async function postData(url = '', auth, data = {}) {
     const userId = queryParams.get('userId');
     const conversationId = queryParams.get('convId');
     const botId = queryParams.get('botId');
-  
+
+    window.parent.postMessage({
+                action: "buttonClicked"
+            }, "*"); 
+      
     // Get data from form
 
     const prescriber = document.getElementById('prescriber').value;
@@ -54,7 +58,8 @@ async function postData(url = '', auth, data = {}) {
         {"name": "prescriber", "value": prescriber}
       ],
     });
+    /*
     window.parent.postMessage({
                 action: "buttonClicked"
-            }, "*"); 
+            }, "*"); */
   }
