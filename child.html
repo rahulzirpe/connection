@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Child</title>
+</head>
+
+<body>
+    <h3>Child Iframe</h3>
+    <button onclick="notifyParent()">Click Me</button>
+
+    <script>
+        function notifyParent() {
+            window.parent.postMessage({
+                action: "buttonClicked"
+            }, "https://rahulzirpe.github.io/connection/parent.html");
+        }
+    </script>
+</body>
+
+</html>
