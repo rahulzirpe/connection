@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parent</title>
+</head>
+<body>
+  <h2>Parent Page</h2>
+
+  <!-- Hidden iframe -->
+  <iframe src="child.html" style="display: none;" id="hiddenFrame"></iframe>
+
+  <script>
+    // Listen for message from child
+    window.addEventListener("message", function(event) {
+      if (event.data && event.data.action === "buttonClicked") {
+        alert("Button was clicked in child (hidden iframe)!");
+      }
+    });
+  </script>
+</body>
+</html>
